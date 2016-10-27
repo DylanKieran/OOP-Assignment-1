@@ -44,4 +44,11 @@ void BackgroundLines()
    line(0,  height - 205, width, height - 205);
    line(0,  height - 210, width, height - 210);
    line(0,  height - 180, width, height - 180);
+   
+   //Lines going downwards
+   line(width/4 - 70,  0, width/4 -70, height);
+   line(width/4 - 50,  0, width/4 - 50, height);
+   line(width/4,  0, width/4, height);
+   line(width/4 + width/2,  0, width/4 + width/2, height);
+   line(width/4 + width/2 + 5,  0, width/4 + width/2 + 5, height);
 }
