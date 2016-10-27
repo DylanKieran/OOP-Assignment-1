@@ -56,4 +56,13 @@ void BackgroundLines()
    stroke(19, 161, 229);
    line(width/4, height/4 - 40, width/4 + width/2, height/4 - 40);
    line(width/4, height/4, width/4 + width/2, height/4);
+   
+   //Red rect
+   fill(255,0,0);
+   stroke(255,0,0);
+   line(width/4, height/4 + 15,width/4 + width/2, height/4 + 15);
+   noStroke();
+   rect(width/4, height/4 + 20, 301, 10);
+   //Bottom Red
+   rect(width/4, height - 195, 301, 5);
 }
