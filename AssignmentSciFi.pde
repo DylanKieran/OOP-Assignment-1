@@ -38,4 +38,10 @@ void BackgroundLines()
    line(0,  height/4 - 40, width, height/4 - 40); //Highest line
    line(0,  height/4 , width, height/4); //Next on down
    line(0,  height/4 + 5, width, height/4 + 5); //3rd Highest
+   
+   //Lines going across and low
+   line(0,  height - 200, width, height - 200);
+   line(0,  height - 205, width, height - 205);
+   line(0,  height - 210, width, height - 210);
+   line(0,  height - 180, width, height - 180);
 }
