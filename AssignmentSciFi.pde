@@ -65,4 +65,14 @@ void BackgroundLines()
    rect(width/4, height/4 + 20, 301, 10);
    //Bottom Red
    rect(width/4, height - 195, 301, 5);
+   
+   //Small rects beside thick lines
+   fill(19, 161, 229);
+   noStroke();
+   //Left side
+   rect(width/4 - 2, height/4 - 42, 5, 5);
+   rect(width/4 + width/2 - 2, height/4 - 42, 5, 5);
+   //Right side
+   rect(width/4 - 2, height/4 - 2, 5, 5);
+   rect(width/4 + width/2 - 2, height/4 - 2, 5, 5);
 }
