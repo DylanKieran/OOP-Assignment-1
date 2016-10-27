@@ -51,4 +51,9 @@ void BackgroundLines()
    line(width/4,  0, width/4, height);
    line(width/4 + width/2,  0, width/4 + width/2, height);
    line(width/4 + width/2 + 5,  0, width/4 + width/2 + 5, height);
+   
+   //Thick lines
+   stroke(19, 161, 229);
+   line(width/4, height/4 - 40, width/4 + width/2, height/4 - 40);
+   line(width/4, height/4, width/4 + width/2, height/4);
 }
