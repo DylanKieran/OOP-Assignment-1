@@ -1,18 +1,22 @@
 class Button
 {
   //Fields
-  int rectX;
-  int rectY;
-  int rectSize;
+  String buttonText;
+  float rectX;
+  float rectY;
+  float rectWidth;
+  float rectHeight;
   color rectColour;
   boolean rectOver;
   
   //Constructor
-  Button(int rectX, int rectY, int rectSize, color rectColour, boolean rectOver)
+  Button(String butonText, float rectX, float rectY, float rectWidth, float rectHeight, color rectColour, boolean rectOver)
   {
+    this.buttonText = buttonText;
     this.rectX = rectX;
     this.rectY = rectY;
-    this.rectSize = rectSize;
+    this.rectWidth = rectWidth;
+    this.rectHeight = rectHeight;
     this.rectColour = rectColour;
     this.rectOver = rectOver;
   }
@@ -28,23 +32,27 @@ class Button
     {
       fill(rectColour);
     }
-    stroke(255);
-    rect(rectX, rectY, rectSize, rectSize);
+    noStroke();
+    rect(rectX, rectY, rectWidth, rectHeight);
   }
   
-  void update(int x, int y) 
+  void update() 
   {
-    if ( overRect(rectX, rectY, rectSize, rectSize) )
+    if ( overRect(rectX, rectY, rectWidth, rectHeight) )
     {
       rectOver = true;
     }
     else
     {
       rectOver =false;
+      
+     // textSize(32);
+      //textAlign(CENTER);
+      //text(buttonText,rectX,rectY);
     }
   }
   
-  boolean overRect(int x, int y, int width, int height) 
+  boolean overRect(float x, float y, float width, float height) 
   {
     if (mouseX >= x && mouseX <= x+width && 
         mouseY >= y && mouseY <= y+height) 

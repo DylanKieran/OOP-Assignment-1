@@ -2,8 +2,12 @@ void setup()
 {
   size(600,600);
   background(1,12,18);
+  
   BackgroundLines();
 }
+
+//ArrayList for Buttons
+ArrayList<Button> buttons = new ArrayList<Button>();
 
 //Variables for BackgroundCircles
 float xCircle = 0;
@@ -12,6 +16,17 @@ float yCircle = 0;
 void draw()
 {
   BackgroundCircles();
+  
+  //Initialise Button Call
+  buttons.add(new Button("Initialising",width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false));
+  
+  //Initialise Button Start Screen
+  for(Button initialise:buttons)
+  {
+    initialise.update();
+    initialise.fillRect();
+    initialise.overRect(mouseX,mouseY, 100, 100);
+  }
 }
 
 void BackgroundCircles()
