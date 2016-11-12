@@ -2,6 +2,8 @@ class Button
 {
   //Fields
   String buttonText;
+  float textX;
+  float textY;
   float rectX;
   float rectY;
   float rectWidth;
@@ -10,9 +12,11 @@ class Button
   boolean rectOver;
   
   //Constructor
-  Button(String butonText, float rectX, float rectY, float rectWidth, float rectHeight, color rectColour, boolean rectOver)
+  Button(String buttonText,float textX, float textY, float rectX, float rectY, float rectWidth, float rectHeight, color rectColour, boolean rectOver)
   {
     this.buttonText = buttonText;
+    this.textX = textX;
+    this.textY = textY;
     this.rectX = rectX;
     this.rectY = rectY;
     this.rectWidth = rectWidth;
@@ -23,20 +27,37 @@ class Button
   
   void fillRect()
   {
-    color rectHighlight  = color(#1B2EF0);
+    //color rectHighlight  = color(#1B2EF0);
+    color textColour = color(19, 161, 229, 50);
+    color textHighlight = color(19, 161, 229);
     
-    if (rectOver) 
+    //Needed if wanting to change a buttons colour
+    /*if (rectOver) 
     {
       fill(rectHighlight);
     } else 
     {
       fill(rectColour);
-    }
+    }*/
+    
+    fill(rectColour);
     noStroke();
     rect(rectX, rectY, rectWidth, rectHeight);
+    
+    if (rectOver) 
+    {
+      fill(textHighlight);
+    } else 
+    {
+      fill(textColour);
+    }
+    
+    textFont(font);
+    textSize(32);
+    text(buttonText,textX,textY);
   }
   
-  void update() 
+ void update() 
   {
     if ( overRect(rectX, rectY, rectWidth, rectHeight) )
     {
@@ -44,18 +65,14 @@ class Button
     }
     else
     {
-      rectOver =false;
-      
-     // textSize(32);
-      //textAlign(CENTER);
-      //text(buttonText,rectX,rectY);
+      rectOver = false;
     }
   }
   
-  boolean overRect(float x, float y, float width, float height) 
+  boolean overRect(float x, float y, float rectWidth, float rectHeight) 
   {
-    if (mouseX >= x && mouseX <= x+width && 
-        mouseY >= y && mouseY <= y+height) 
+    if (mouseX >= x && mouseX <= x+rectWidth && 
+        mouseY >= y && mouseY <= y+rectHeight) 
       {
         return true;
       } 
