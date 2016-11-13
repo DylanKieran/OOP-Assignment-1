@@ -69,7 +69,7 @@ class Button
     }
   }
   
-  void mousePressed()
+  void mouseClicked()
   {
     if(rectOver)
     {
