@@ -69,6 +69,14 @@ class Button
     }
   }
   
+  void mousePressed()
+  {
+    if(rectOver)
+    {
+       GameState = 1;
+    }
+  }
+  
   boolean overRect(float x, float y, float rectWidth, float rectHeight) 
   {
     if (mouseX >= x && mouseX <= x+rectWidth && 

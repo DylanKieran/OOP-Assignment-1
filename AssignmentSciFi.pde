@@ -1,11 +1,13 @@
+
 void setup()
 {
   size(600,600);
   background(1,12,18);
   font = createFont("Adam.otf", 32);
-  
   BackgroundLines();
 }
+
+int GameState = 0;
 
 //Declaring font
 PFont font;
@@ -30,7 +32,10 @@ void draw()
     initialise.update();
     initialise.fillRect();
     initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
+    initialise.mousePressed();
   }
+  
+  InitialScreen();
 }
 
 void BackgroundCircles()
@@ -46,6 +51,20 @@ void BackgroundCircles()
    noStroke();
    fill(49,163,219,20);
    ellipse(xCircle , yCircle, 5, 5);
+}
+
+void InitialScreen()
+{
+  if(GameState == 0)
+  {
+    ButtonEffectLines();
+    RedLines();
+  }
+  else if(GameState == 1)
+  {
+    fill(255,0,0);
+    rect(100,100,100,100);
+  }
 }
 
 void BackgroundLines()
