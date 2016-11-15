@@ -39,6 +39,7 @@ void draw()
   else if(State == TimeScreen)
   {
     background(1,12,18);
+    TimerScreenBackground();
   }
   else if(State == LoadingScreen)
   {
@@ -98,4 +99,24 @@ void BackgroundLines()
    rect(width/4, height/4 + 20, 301, 10);
    //Bottom Red
    rect(width/4, height - 195, 301, 5);
+}
+
+void TimerScreenBackground()
+{
+
+   //Draw Background Lines
+   stroke(19, 161, 229, 50);
+   
+   //Lines going across
+   line(0,  height/4 , width, height/4); //2nd
+   //line(0,  height/4 - 40, width, height/4 - 40); //Highest line
+   //line(0,  height/4 + 5, width, height/4 + 5); //3rd Highest
+   
+   //Lines going across and low
+   line(0,  height - 200, width, height - 200);
+   //line(0,  height - 215, width, height - 215); //Use for thick Line
+   line(0,  height - 260, width, height - 260);
+   line(0,  height - 275, width, height - 275);
+   line(0,  height - 80, width, height - 80);
+   
 }
