@@ -118,5 +118,4 @@ void TimerScreenBackground()
    line(0,  height - 260, width, height - 260);
    line(0,  height - 275, width, height - 275);
    line(0,  height - 80, width, height - 80);
-   
 }
