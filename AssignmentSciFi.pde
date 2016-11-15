@@ -26,6 +26,10 @@ int begin;
 int duration;
 int time;
 
+//Variables for LoadingWheel
+int ang = 1;
+int ang2 = 2;
+
 void draw()
 {
   if(State == InitialState)
@@ -201,4 +205,25 @@ void Timer()
   
   fill(255,0,0);
   text(time, width/2 - 14, height/2 - 45);
+}
+
+void LoadingWheel()
+{
+  stroke(255,0,0);
+  strokeWeight(5);
+  smooth();
+    
+  noFill();
+  
+  ang += 2;
+  ang2 += 3;
+  arc(width/2, height/2 - 60, 140, 140, radians(-ang + 50), radians(-ang + 100));
+  arc(width/2, height/2 - 60, 120, 120, radians(ang2 + 80), radians(ang2 + 160));
+  arc(width/2, height/2 - 60, 100, 100, radians(ang + 100), radians(ang + 150));
+  arc(width/2, height/2 - 60, 80, 80, radians(-ang2 + 40), radians(-ang2 + 80));
+  arc(width/2, height/2 - 60, 160, 160, radians(-ang2 + 100), radians(-ang2 + 200));
+  
+  strokeWeight(1);
+  noStroke();
+  
 }
