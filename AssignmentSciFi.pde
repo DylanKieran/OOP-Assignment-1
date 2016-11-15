@@ -127,4 +127,11 @@ void TimerScreenBackground()
    line(width/4 + width/2,  0, width/4 + width/2, height);//Right Center
    line(width/4 + width/2 + 40,  0, width/4 + width/2 + 40, height);
    line(width/4 + width/2 + 100,  0, width/4 + width/2 + 100, height);
+   
+   //Thick lines
+   stroke(19, 161, 229);
+   line(width/4,  height - 215, width/4 + width/2, height - 215);
+   line(width/4, height - 260, width/4 + width/2, height - 260);
+   
+
 }
