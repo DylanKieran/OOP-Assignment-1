@@ -69,12 +69,18 @@ class Button
     }
   }
   
-  void mouseClicked()
+  void mouseclick()
   {
-    if(rectOver)
-    {
-       GameState = 1;
-    }
+    if (mouseX >= rectX && mouseX <= rectX+rectWidth && 
+        mouseY >= rectY && mouseY <= rectY+rectHeight
+        && mousePressed) 
+      {
+        State = TimeScreen;
+      } 
+      else 
+      {
+        State = InitialState;
+      }
   }
   
   boolean overRect(float x, float y, float rectWidth, float rectHeight) 

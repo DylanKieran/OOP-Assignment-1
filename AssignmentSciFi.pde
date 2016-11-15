@@ -3,9 +3,8 @@ void setup()
 {
   size(600,600);
   smooth();
-  background(1,12,18);
   font = createFont("Adam.otf", 32);
-  BackgroundLines();
+  background(1,12,18);
 }
 
 //Program States
@@ -18,72 +17,44 @@ int State = InitialState;
 //Declaring font
 PFont font;
 
-//ArrayList for Buttons
-ArrayList<Button> buttons = new ArrayList<Button>();
-
 //Variables for BackgroundCircles
 float xCircle = 0;
 float yCircle = 0;
 
 void draw()
 {
-  switch(State)
+  if(State == InitialState)
   {
-    case InitialState :
-    {
-        BackgroundCircles();
-        
-        //Initialise Button Call
-        buttons.add(new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false));
-        
-        //Initialise Button Start Screen
-        for(Button initialise:buttons)
-        {
-          initialise.update();
-          initialise.fillRect();
-          initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
-          initialise.mouseClicked();
-        }
-        
-        InitialScreen();
-        
-        break;
-    }
+    BackgroundLines();
+    
+    //Initialise Button Call
+    Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false);
+          
+    //Initialise Button Start Screen
+      initialise.update();
+      initialise.fillRect();
+      initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
+      initialise.mouseclick();
+  }
+  else if(State == TimeScreen)
+  {
+    background(1,12,18);
+  }
+  else if(State == LoadingScreen)
+  {
+    
+  }
+  else if(State == VaultScreen)
+  {
+    
   }
   
-}
-
-void BackgroundCircles()
-{
-   //Draw Background Circles
-   yCircle += height/11;
-   if(yCircle > height)
-   {
-     yCircle = 0;
-     xCircle += 40;
-   }
-   
-   noStroke();
-   fill(49,163,219,20);
-   ellipse(xCircle , yCircle, 5, 5);
-}
-
-void InitialScreen()
-{
-  if(GameState == 0)
-  {
-  }
-  else if(GameState == 1)
-  {
-    rect(100,100,100,100);
-    BackgroundCircles();
-  }
 }
 
 void BackgroundLines()
 {
    //Draw Background Lines
-   stroke(19, 161, 229, 50);
+   stroke(11,92,131);
    
    //Lines going across
    line(0,  height/4 - 40, width, height/4 - 40); //Highest line
