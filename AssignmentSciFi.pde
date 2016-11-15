@@ -133,5 +133,35 @@ void TimerScreenBackground()
    line(width/4,  height - 215, width/4 + width/2, height - 215);
    line(width/4, height - 260, width/4 + width/2, height - 260);
    
+   //Thick Rect
+   fill(19, 161, 229);
+   rect(width/4, height - 202, 300, 3);
+   noFill();
+   noStroke();
+   
+   //Small rects beside thick lines
+   fill(19, 161, 229);
+   noStroke();
+   //Left side
+   rect(width/4 - 2, height - 216, 3, 3);
+   rect(width/4 + width/2 - 2,  height - 216, 3, 3);
+   //Right side
+   rect(width/4 - 2, height - 261, 3, 3);
+   rect(width/4 + width/2 - 2, height - 261, 3, 3);
+   
+   //Top small rects
+   rect(width/4 - 2, height/4 - 1, 3, 3);
+   rect(width/4 + width/2 - 2, height/4 - 1, 3, 3);
+   
+   //Red small rects
+   fill(255,0,0);
+   noStroke();
+   //Top
+   rect(width/4 + width/2 + 39,  height - 261, 3, 3);
+   rect(width/4 + width/2 + 99,  height - 261, 3, 3);
+   //Bot
+   rect(width/4 + width/2 + 39, height - 201, 3, 3);
+   rect(width/4 + width/2 + 99, height - 201, 3, 3);
+   
 
 }
