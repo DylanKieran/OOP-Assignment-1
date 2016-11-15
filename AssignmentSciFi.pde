@@ -21,6 +21,11 @@ PFont font;
 float PulseDiameter = 5;
 float opacity = 255;
 
+//Variables for Timer
+int begin; 
+int duration;
+int time;
+
 void draw()
 {
   if(State == InitialState)
@@ -182,4 +187,18 @@ void PulseCircle()
       PulseDiameter = 0;
       opacity = 255;
     }
+}
+
+void Timer()
+{
+  textFont(font);
+  textSize(38);
+  
+  if (time > 0)  
+  {
+    time = duration - (millis() - begin)/1000;
+  }
+  
+  fill(255,0,0);
+  text(time, width/2 - 14, height/2 - 45);
 }
