@@ -17,9 +17,9 @@ int State = InitialState;
 //Declaring font
 PFont font;
 
-//Variables for BackgroundCircles
-float xCircle = 0;
-float yCircle = 0;
+//Variables for Pulse Circle
+float PulseDiameter = 5;
+float opacity = 255;
 
 void draw()
 {
@@ -40,6 +40,7 @@ void draw()
   {
     background(1,12,18);
     TimerScreenBackground();
+    PulseCircle();
   }
   else if(State == LoadingScreen)
   {
@@ -162,6 +163,23 @@ void TimerScreenBackground()
    //Bot
    rect(width/4 + width/2 + 39, height - 201, 3, 3);
    rect(width/4 + width/2 + 99, height - 201, 3, 3);
-   
+}
 
+void PulseCircle()
+{
+    noFill();
+    smooth();
+    stroke(19, 161, 229, opacity);
+    
+    if(PulseDiameter != 100)
+    {
+      ellipse(width/4 + width/2 + 69, height - 230, PulseDiameter, PulseDiameter);
+      PulseDiameter++;
+      opacity -= 4;
+    }
+    else
+    {
+      PulseDiameter = 0;
+      opacity = 255;
+    }
 }
