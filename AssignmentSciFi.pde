@@ -118,4 +118,13 @@ void TimerScreenBackground()
    line(0,  height - 260, width, height - 260);
    line(0,  height - 275, width, height - 275);
    line(0,  height - 80, width, height - 80);
+   
+   //Lines going downwards
+   //line(width/4 - 100,  0, width/4 -100, height);
+   line(width/4 - 50,  height/4, width/4 - 50, height/2 + 100);
+   line(width/4,  0, width/4, height/2 + 220); //Left Center
+   
+   line(width/4 + width/2,  0, width/4 + width/2, height);//Right Center
+   line(width/4 + width/2 + 40,  0, width/4 + width/2 + 40, height);
+   line(width/4 + width/2 + 100,  0, width/4 + width/2 + 100, height);
 }
