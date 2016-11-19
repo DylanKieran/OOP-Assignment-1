@@ -251,6 +251,7 @@ void LoadingWheel()
 
 void LoadBird()
 {
+  tint(255, 127);
   Bird.resize(200,200);
   image(Bird, width/4 + 49, height/2 - 115);
 }
