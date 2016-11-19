@@ -44,6 +44,7 @@ int Ypos;
 //Variables for Loading Screen
 float LoadNeg = 0;
 float LoadPos = 0;
+int PercentageLoading = 0;
 
 void draw()
 {
@@ -312,4 +313,8 @@ void Loading()
   {
      LoadNeg = -150;
   }
+  
+  //Percentage
+  PercentageLoading = int ((LoadPos/150)*(100));
+  text(PercentageLoading + "%", width/4 + 12, height/3 - 58);
 }
