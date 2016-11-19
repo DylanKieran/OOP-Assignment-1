@@ -46,6 +46,11 @@ float LoadNeg = 0;
 float LoadPos = 0;
 int PercentageLoading = 0;
 
+//Variables for clock
+int h;
+int m;
+int s;
+
 void draw()
 {
   if(State == InitialState)
@@ -54,6 +59,7 @@ void draw()
     BackgroundCircles();
     BackgroundLines();
     LoadBird();
+    Clock();
     
     //Initialise Button Call
     Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false);
@@ -317,4 +323,16 @@ void Loading()
   //Percentage
   PercentageLoading = int ((LoadPos/150)*(100));
   text(PercentageLoading + "%", width/4 + 12, height/3 - 58);
+}
+
+void Clock()
+{
+  h = hour();
+  m = minute();
+  s = second();
+  
+  textSize(24);
+  fill(255,0,0,180);
+  textFont(font);
+  text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width/2 - 58, height/4 - 80);
 }
