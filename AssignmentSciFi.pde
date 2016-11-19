@@ -18,9 +18,7 @@ PImage Bird;
 
 //Program States
 int InitialState = 0;
-int TimeScreen = 1;
-int LoadingScreen = 2;
-int VaultScreen = 3;
+int LoadingScreen = 1;
 int State = InitialState;
 
 //Declaring font
@@ -43,6 +41,10 @@ int ang2 = 2;
 int Xpos;
 int Ypos;
 
+//Variables for Loading Screen
+float LoadNeg = 0;
+float LoadPos = 0;
+
 void draw()
 {
   if(State == InitialState)
@@ -61,20 +63,13 @@ void draw()
       initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
       initialise.mouseclick();
   }
-  else if(State == TimeScreen)
+  else if(State == LoadingScreen)
   {
     background(1,12,18);
     BackgroundCircles();
     TimerScreenBackground();
     PulseCircle();
-  }
-  else if(State == LoadingScreen)
-  {
-    
-  }
-  else if(State == VaultScreen)
-  {
-    
+    Loading();
   }
   
 }
@@ -264,5 +259,26 @@ void BackgroundCircles()
     {
       ellipse(Xpos, Ypos, 1 , 1);
     }
+  }
+}
+
+void Loading()
+{
+  stroke(0);
+  fill(255,0,0);
+  noStroke();
+  rect(width/2, height/2 - 70, LoadNeg, 8);
+  rect(width/2, height/2 - 70, LoadPos, 8);
+  
+  LoadPos +=0.5;
+  if (LoadPos >= 150)
+  {
+     LoadPos = 150;
+  }
+  
+  LoadNeg -= 0.5;
+  if (LoadNeg <= -150)
+  {
+     LoadNeg = -150;
   }
 }

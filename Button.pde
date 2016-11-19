@@ -75,7 +75,7 @@ class Button
         mouseY >= rectY && mouseY <= rectY+rectHeight
         && mousePressed) 
       {
-        State = TimeScreen;
+        State = LoadingScreen;
       } 
       else 
       {
