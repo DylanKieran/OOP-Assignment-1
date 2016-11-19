@@ -264,6 +264,37 @@ void BackgroundCircles()
 
 void Loading()
 {
+  //Loading Text
+  fill(19, 161, 229, 150);
+  textFont(font);
+  textSize(22);
+
+  if (LoadPos <= 25)
+  {
+    text("Loading.",width/2 - 52, height/2 + 75);
+  }
+  else if (LoadPos < 50 && LoadPos >= 25)
+  {
+    text("Loading..",width/2 - 52, height/2 + 75);
+  }
+  else if (LoadPos < 75 && LoadPos >= 50)
+  {
+    text("Loading...",width/2 - 52, height/2 + 75);
+  }
+  else if (LoadPos <= 100 && LoadPos >= 75)
+  {
+    text("Loading.",width/2 - 52, height/2 + 75);
+  }
+  else if (LoadPos <= 125 && LoadPos >= 100)
+  {
+    text("Loading..",width/2 - 52, height/2 + 75);
+  }
+  else if (LoadPos <= 150 && LoadPos >= 125)
+  {
+    text("Loading...",width/2 - 52, height/2 + 75);
+  }
+  
+  //Loading Bar
   stroke(0);
   fill(255,0,0);
   noStroke();
