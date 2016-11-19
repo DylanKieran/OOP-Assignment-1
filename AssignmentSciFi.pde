@@ -5,7 +5,16 @@ void setup()
   smooth();
   font = createFont("Adam.otf", 32);
   background(1,12,18);
+  
+  //Load Image
+  Bird = loadImage("Bird.png");
+  
+  //Timer Values
+  begin = millis();
+  time = duration = 10;
+  
 }
+PImage Bird;
 
 //Program States
 int InitialState = 0;
@@ -22,7 +31,7 @@ float PulseDiameter = 5;
 float opacity = 255;
 
 //Variables for Timer
-int begin; 
+int begin;
 int duration;
 int time;
 
@@ -30,11 +39,18 @@ int time;
 int ang = 1;
 int ang2 = 2;
 
+//Variables for background Circles
+int Xpos;
+int Ypos;
+
 void draw()
 {
   if(State == InitialState)
   {
+    background(1,12,18);
+    BackgroundCircles();
     BackgroundLines();
+    LoadBird();
     
     //Initialise Button Call
     Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false);
@@ -48,8 +64,11 @@ void draw()
   else if(State == TimeScreen)
   {
     background(1,12,18);
+    BackgroundCircles();
     TimerScreenBackground();
     PulseCircle();
+    Timer();
+    LoadingWheel();
   }
   else if(State == LoadingScreen)
   {
@@ -65,7 +84,8 @@ void draw()
 void BackgroundLines()
 {
    //Draw Background Lines
-   stroke(11,92,131);
+   //stroke(11,92,140);
+   stroke(#0C3352);
    
    //Lines going across
    line(0,  height/4 - 40, width, height/4 - 40); //Highest line
@@ -197,12 +217,13 @@ void Timer()
 {
   textFont(font);
   textSize(38);
-  
-  if (time > 0)  
+  if(State == TimeScreen)
   {
-    time = duration - (millis() - begin)/1000;
+    if (time > 0)  
+      {
+        time = duration - millis()/1000;
+      }
   }
-  
   fill(255,0,0);
   text(time, width/2 - 14, height/2 - 45);
 }
@@ -226,4 +247,23 @@ void LoadingWheel()
   strokeWeight(1);
   noStroke();
   
+}
+
+void LoadBird()
+{
+  Bird.resize(200,200);
+  image(Bird, width/4 + 49, height/2 - 115);
+}
+
+void BackgroundCircles()
+{
+  noStroke();
+  fill(19, 161, 229);
+  for(Xpos = 5; Xpos < width; Xpos += 40)
+  {
+    for(Ypos = 5; Ypos < height; Ypos += 40)
+    {
+      ellipse(Xpos, Ypos, 1 , 1);
+    }
+  }
 }
