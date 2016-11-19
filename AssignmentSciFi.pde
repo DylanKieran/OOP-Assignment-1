@@ -67,8 +67,6 @@ void draw()
     BackgroundCircles();
     TimerScreenBackground();
     PulseCircle();
-    Timer();
-    LoadingWheel();
   }
   else if(State == LoadingScreen)
   {
@@ -213,7 +211,7 @@ void PulseCircle()
     }
 }
 
-void Timer()
+/*void Timer()
 {
   textFont(font);
   textSize(38);
@@ -226,9 +224,9 @@ void Timer()
   }
   fill(255,0,0);
   text(time, width/2 - 14, height/2 - 45);
-}
+}*/
 
-void LoadingWheel()
+/*void LoadingWheel()
 {
   stroke(255,0,0);
   strokeWeight(5);
@@ -247,7 +245,7 @@ void LoadingWheel()
   strokeWeight(1);
   noStroke();
   
-}
+}*/
 
 void LoadBird()
 {
