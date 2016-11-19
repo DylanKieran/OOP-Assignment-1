@@ -51,24 +51,29 @@ int h;
 int m;
 int s;
 
+//Variables for RenderLine
+float RenderY = 0;
+
 void draw()
 {
   if(State == InitialState)
   {
     background(1,12,18);
+    RenderLine();
     BackgroundCircles();
     BackgroundLines();
     LoadBird();
     Clock();
+
     
     //Initialise Button Call
     Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false);
           
     //Initialise Button Start Screen
-      initialise.update();
-      initialise.fillRect();
-      initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
-      initialise.mouseclick();
+    initialise.update();
+    initialise.fillRect();
+    initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
+    initialise.mouseclick();
   }
   else if(State == LoadingScreen)
   {
@@ -335,4 +340,17 @@ void Clock()
   fill(255,0,0,180);
   textFont(font);
   text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width/2 - 58, height/4 - 80);
+}
+
+void RenderLine()
+{
+  stroke(255,0,0,100);
+  line(0, RenderY, width, RenderY);
+  
+  RenderY += 1;
+  if (RenderY > height) 
+  {
+    RenderY = 0; 
+  }
+  
 }
