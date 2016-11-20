@@ -8,7 +8,8 @@ void setup()
   
   //Load Images
   Bird = loadImage("Bird.png");
-  NotTarget = loadImage("NotTarget.png");
+  NoTarget = loadImage("NotTarget.png");
+  TargetLocated = loadImage("TargetLocked.png");
   
   //Timer Values
   begin = millis();
@@ -18,7 +19,8 @@ void setup()
 
 //Load Images
 PImage Bird;
-PImage NotTarget;
+PImage NoTarget;
+PImage TargetLocated;
 
 //Program States
 int InitialState = 0;
@@ -58,6 +60,9 @@ int s;
 
 //Variables for RenderLine
 float RenderY = 0;
+
+//Asia Screen Variables
+boolean hasClicked;
 
 void draw()
 {
@@ -373,9 +378,16 @@ void RenderLine()
   
 }
 
+void mousePressed()
+{
+  if(State == AsiaScreen)
+  {
+     hasClicked = true;
+  }
+}
+
 void LoadAsia()
 {
   tint(255, 127);
-  //Asia.resize(500,500);
-  image(NotTarget, width/4 - 100, height/2 - 230);
+  image(hasClicked? TargetLocated : NoTarget, width/4 - 110, height/2 - 240);
 }
