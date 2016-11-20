@@ -64,6 +64,14 @@ float RenderY = 0;
 //Asia Screen Variables
 boolean hasClicked;
 
+//Variables for AsiaLines
+float UpperKoreaY = 0;
+float LowerKoreaY = 0;
+float LeftKoreaX = 0;
+float RightKoreaX = 0;
+float TargetX = -100;
+float TargetY = -100;
+
 void draw()
 {
   if(State == InitialState)
@@ -98,6 +106,7 @@ void draw()
     background(1,12,18);
     LoadAsia();
     BackgroundCircles();
+    AsiaLines();
   }
   
 }
@@ -390,4 +399,33 @@ void LoadAsia()
 {
   tint(255, 127);
   image(hasClicked? TargetLocated : NoTarget, width/4 - 110, height/2 - 240);
+}
+
+void AsiaLines()
+{
+  
+   //Draw Background Lines
+   stroke(19, 161, 229, 50);
+   
+   if (mousePressed)
+   {
+       UpperKoreaY = height/4 + 88;
+       LowerKoreaY = height/4 + 28;
+       RightKoreaX = width/4 + width/2 + 10;
+       LeftKoreaX = width/4 + width/2 - 60;
+       TargetX = 0;
+       TargetY = 20;
+   }
+   
+   //Lines going across
+   line(0,  UpperKoreaY, width, UpperKoreaY); //Upper Korea
+   line(0,  LowerKoreaY, width, LowerKoreaY); //Lower Korea
+     
+   //Lines going downwards
+   line(RightKoreaX,  0, RightKoreaX, height); //Right Korea
+   line(LeftKoreaX,  0, LeftKoreaX, height); //Left Korea
+   
+   fill(255,0,0);
+   noStroke();
+   rect(TargetX, TargetY, 300, 15);
 }
