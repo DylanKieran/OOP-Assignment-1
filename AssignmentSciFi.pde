@@ -6,19 +6,24 @@ void setup()
   font = createFont("Adam.otf", 32);
   background(1,12,18);
   
-  //Load Image
+  //Load Images
   Bird = loadImage("Bird.png");
+  NotTarget = loadImage("NotTarget.png");
   
   //Timer Values
   begin = millis();
   time = duration = 10;
   
 }
+
+//Load Images
 PImage Bird;
+PImage NotTarget;
 
 //Program States
 int InitialState = 0;
 int LoadingScreen = 1;
+int AsiaScreen = 2;
 int State = InitialState;
 
 //Declaring font
@@ -82,6 +87,12 @@ void draw()
     TimerScreenBackground();
     PulseCircle();
     Loading();
+  }
+  else if(State == AsiaScreen)
+  {
+    background(1,12,18);
+    LoadAsia();
+    BackgroundCircles();
   }
   
 }
@@ -328,7 +339,14 @@ void Loading()
   //Percentage
   PercentageLoading = int ((LoadPos/150)*(100));
   text(PercentageLoading + "%", width/4 + 12, height/3 - 58);
+  
+  if(PercentageLoading == 100)
+  {
+    delay(300);
+    State = 2;
+  }
 }
+
 
 void Clock()
 {
@@ -353,4 +371,11 @@ void RenderLine()
     RenderY = 0; 
   }
   
+}
+
+void LoadAsia()
+{
+  tint(255, 127);
+  //Asia.resize(500,500);
+  image(NotTarget, width/4 - 100, height/2 - 230);
 }
