@@ -10,9 +10,11 @@ class Button
   float rectHeight;
   color rectColour;
   boolean rectOver;
+  int CurrentScreen;
+  int NextScreen;
   
   //Constructor
-  Button(String buttonText,float textX, float textY, float rectX, float rectY, float rectWidth, float rectHeight, color rectColour, boolean rectOver)
+  Button(String buttonText,float textX, float textY, float rectX, float rectY, float rectWidth, float rectHeight, color rectColour, boolean rectOver, int CurrentScreen ,int NextScreen)
   {
     this.buttonText = buttonText;
     this.textX = textX;
@@ -23,6 +25,8 @@ class Button
     this.rectHeight = rectHeight;
     this.rectColour = rectColour;
     this.rectOver = rectOver;
+    this.CurrentScreen = CurrentScreen;
+    this.NextScreen = NextScreen;
   }
   
   void fillRect()
@@ -75,11 +79,11 @@ class Button
         mouseY >= rectY && mouseY <= rectY+rectHeight
         && mousePressed) 
       {
-        State = LoadingScreen;
+        State = NextScreen;
       } 
       else 
       {
-        State = InitialState;
+        State = CurrentScreen;
       }
   }
   

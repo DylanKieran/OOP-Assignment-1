@@ -26,6 +26,7 @@ PImage TargetLocated;
 int InitialState = 0;
 int LoadingScreen = 1;
 int AsiaScreen = 2;
+int LaunchSeq = 3;
 int State = InitialState;
 
 //Declaring font
@@ -71,6 +72,7 @@ float LeftKoreaX = 0;
 float RightKoreaX = 0;
 float TargetX = -100;
 float TargetY = -100;
+float LattX,LattY,LongX,LongY = -100;
 
 void draw()
 {
@@ -85,7 +87,7 @@ void draw()
 
     
     //Initialise Button Call
-    Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false);
+    Button initialise = new Button("Initialise", width/2 - 70, height/4 - 7,width/4 + 4,height/4 - 36,width/2 - 8, 34,color(1,12,18), false, InitialState, LoadingScreen);
           
     //Initialise Button Start Screen
     initialise.update();
@@ -107,6 +109,25 @@ void draw()
     LoadAsia();
     BackgroundCircles();
     AsiaLines();
+    RenderLine();
+    
+    if(hasClicked)
+    {
+      //Launch Button Call
+      Button Launch = new Button("Launch", width - 130, height - 40 , width - 132, height - 66, 160, 30, color(1,12,18,255), false, AsiaScreen, LaunchSeq);
+            
+      //Initialise Button Start Screen
+      Launch.update();
+      Launch.fillRect();
+      Launch.overRect(mouseX,mouseY,width/2 - 8, 34);
+      Launch.mouseclick();
+    }
+    
+  }
+  else if(State == LaunchSeq)
+  {
+    background(1,12,18);
+    BackgroundCircles();
   }
   
 }
@@ -413,8 +434,13 @@ void AsiaLines()
        LowerKoreaY = height/4 + 28;
        RightKoreaX = width/4 + width/2 + 10;
        LeftKoreaX = width/4 + width/2 - 60;
-       TargetX = 0;
-       TargetY = 20;
+       TargetX = 10;
+       TargetY = 40;
+       LattX = 10;
+       LattY = height - 40;
+       LongX = 10;
+       LongY = height - 20;
+       
    }
    
    //Lines going across
@@ -427,5 +453,12 @@ void AsiaLines()
    
    fill(255,0,0);
    noStroke();
-   rect(TargetX, TargetY, 300, 15);
+   textSize(18);
+   rect(TargetX, TargetY + 2, 156, 2);
+   text("Target Located", TargetX, TargetY);
+   
+   fill(255,0,0, 200);
+   textSize(15);
+   text("Lattitude :  40.3399°  N", LattX, LattY);
+   text("Longitude :  127.5101°  E", LongX, LongY);
 }
