@@ -25,6 +25,7 @@ int InitialState = 0;
 int LoadingScreen = 1;
 int AsiaScreen = 2;
 int LaunchSeq = 3;
+int MissionSuccess = 4;
 int State = InitialState;
 
 //Declaring font
@@ -132,6 +133,12 @@ void draw()
     LoadKoreaLines();
     PulseCircleKorea();
     LoadingWheel();
+  }
+  else if(State == MissionSuccess)
+  {
+    background(255,0,0);
+    fill(255);
+    text("Mission Successful",width/4 - 45,height/2);
   }
   
 }
@@ -278,12 +285,14 @@ void Timer()
     if (remainingTime <= 0) 
     {
       timerOn = false;
+      State = MissionSuccess;
     } 
     else 
     {
       fill(255,0,0);
       text(remainingTime/1000, width - 68, height/2 + 60);
     }
+    
   }
 }
 
