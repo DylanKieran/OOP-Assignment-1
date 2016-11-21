@@ -131,6 +131,9 @@ void draw()
     background(1,12,18);
     BackgroundCircles();
     LoadNorthKorea();
+    LoadKoreaLines();
+    PulseCircleKorea();
+    LoadingWheel();
   }
   
 }
@@ -282,7 +285,7 @@ void PulseCircle()
   text(time, width/2 - 14, height/2 - 45);
 }*/
 
-/*void LoadingWheel()
+void LoadingWheel()
 {
   stroke(255,0,0);
   strokeWeight(5);
@@ -292,16 +295,16 @@ void PulseCircle()
   
   ang += 2;
   ang2 += 3;
-  arc(width/2, height/2 - 60, 140, 140, radians(-ang + 50), radians(-ang + 100));
-  arc(width/2, height/2 - 60, 120, 120, radians(ang2 + 80), radians(ang2 + 160));
-  arc(width/2, height/2 - 60, 100, 100, radians(ang + 100), radians(ang + 150));
-  arc(width/2, height/2 - 60, 80, 80, radians(-ang2 + 40), radians(-ang2 + 80));
-  arc(width/2, height/2 - 60, 160, 160, radians(-ang2 + 100), radians(-ang2 + 200));
+  arc(width - 70, height - 70, 120, 120, radians(-ang + 50), radians(-ang + 100));
+  arc(width - 70, height - 70, 60, 60, radians(ang2 + 80), radians(ang2 + 160));
+  arc(width - 70, height - 70, 40, 40, radians(ang + 100), radians(ang + 150));
+  arc(width - 70, height - 70, 20, 20, radians(-ang2 + 40), radians(-ang2 + 80));
+  arc(width - 70, height - 70, 100, 100, radians(-ang2 + 100), radians(-ang2 + 200));
   
   strokeWeight(1);
   noStroke();
   
-}*/
+}
 
 void LoadBird()
 {
@@ -470,4 +473,47 @@ void LoadNorthKorea()
 {
   tint(255, 127);
   image(NorthKorea, width/4 - 30, height/2 - 220);
+}
+
+void LoadKoreaLines()
+{
+   //Draw Background Lines
+   stroke(19, 161, 229, 50);
+   
+   //Lines going across
+   line(0,  height/2 + 10, width, height/2 + 10);
+   line(0,  height/2 + 90, width, height/2 + 90);
+     
+   //Lines going downwards
+   line(width/4 + 15,  0, width/4 + 15, height);
+   line(width/4 + 115,  0, width/4 + 115, height);
+   
+   //Red small rects
+   fill(255,0,0);
+   noStroke();
+   //Top
+   rect(width/4 + 14,  height/2 + 10, 3, 3);
+   rect(width/4 + 14,  height/2 + 90, 3, 3);
+   //Bot
+   rect(width/4 + 114, height/2 + 10, 3, 3);
+   rect(width/4 + 114, height/2 + 90, 3, 3);
+}
+
+void PulseCircleKorea()
+{
+    noFill();
+    smooth();
+    stroke(19, 161, 229, opacity);
+    
+    if(PulseDiameter != 150)
+    {
+      ellipse(width/4 + 64, height/2 + 50, PulseDiameter, PulseDiameter);
+      PulseDiameter++;
+      opacity -= 3;
+    }
+    else
+    {
+      PulseDiameter = 0;
+      opacity = 255;
+    }
 }
