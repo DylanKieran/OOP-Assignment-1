@@ -12,10 +12,6 @@ void setup()
   TargetLocated = loadImage("TargetLocked.png");
   NorthKorea = loadImage("NorthKorea.png");
   
-  //Timer Values
-  begin = millis();
-  time = duration = 10;
-  
 }
 
 //Load Images
@@ -39,9 +35,9 @@ float PulseDiameter = 5;
 float opacity = 255;
 
 //Variables for Timer
-int begin;
-int duration;
-int time;
+int timerLength = 11000; // 10 seconds
+int endTime;
+boolean timerOn;
 
 //Variables for LoadingWheel
 int ang = 1;
@@ -129,6 +125,8 @@ void draw()
   else if(State == LaunchSeq)
   {
     background(1,12,18);
+    SetTimer();
+    Timer();
     BackgroundCircles();
     LoadNorthKorea();
     LoadKoreaLines();
@@ -270,20 +268,33 @@ void PulseCircle()
     }
 }
 
-/*void Timer()
+void Timer()
 {
   textFont(font);
   textSize(38);
-  if(State == TimeScreen)
+  if (timerOn) 
   {
-    if (time > 0)  
-      {
-        time = duration - millis()/1000;
-      }
+    int remainingTime = endTime-millis();
+    if (remainingTime <= 0) 
+    {
+      timerOn = false;
+    } 
+    else 
+    {
+      fill(255,0,0);
+      text(remainingTime/1000, width - 68, height/2 + 60);
+    }
   }
-  fill(255,0,0);
-  text(time, width/2 - 14, height/2 - 45);
-}*/
+}
+
+void SetTimer()
+{
+  if(State == LaunchSeq && timerOn == false)
+  {
+    endTime = millis() + timerLength;
+    timerOn = true;
+  }
+}
 
 void LoadingWheel()
 {
