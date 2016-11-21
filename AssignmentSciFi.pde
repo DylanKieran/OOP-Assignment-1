@@ -295,11 +295,9 @@ void LoadingWheel()
   
   ang += 2;
   ang2 += 3;
-  arc(width - 70, height - 70, 120, 120, radians(-ang + 50), radians(-ang + 100));
-  arc(width - 70, height - 70, 60, 60, radians(ang2 + 80), radians(ang2 + 160));
-  arc(width - 70, height - 70, 40, 40, radians(ang + 100), radians(ang + 150));
-  arc(width - 70, height - 70, 20, 20, radians(-ang2 + 40), radians(-ang2 + 80));
-  arc(width - 70, height - 70, 100, 100, radians(-ang2 + 100), radians(-ang2 + 200));
+  arc(width - 50, height - 50, 60, 60, radians(ang2 + 40), radians(ang2 + 180));
+  arc(width - 50, height - 50, 40, 40, radians(ang + 80), radians(ang + 200));
+  arc(width - 50, height - 50, 20, 20, radians(-ang2 + 40), radians(-ang2 + 180));
   
   strokeWeight(1);
   noStroke();
