@@ -10,6 +10,7 @@ void setup()
   Bird = loadImage("Bird.png");
   NoTarget = loadImage("NotTarget.png");
   TargetLocated = loadImage("TargetLocked.png");
+  NorthKorea = loadImage("NorthKorea.png");
   
   //Timer Values
   begin = millis();
@@ -21,6 +22,7 @@ void setup()
 PImage Bird;
 PImage NoTarget;
 PImage TargetLocated;
+PImage NorthKorea;
 
 //Program States
 int InitialState = 0;
@@ -128,6 +130,7 @@ void draw()
   {
     background(1,12,18);
     BackgroundCircles();
+    LoadNorthKorea();
   }
   
 }
@@ -390,7 +393,7 @@ void Clock()
   s = second();
   
   textSize(24);
-  fill(255,0,0,180);
+  fill(19, 161, 229, 80);
   textFont(font);
   text (h + ":" + nf(m, 2) + ":" + nf(s, 2), width/2 - 58, height/4 - 80);
 }
@@ -461,4 +464,10 @@ void AsiaLines()
    textSize(15);
    text("Lattitude :  40.3399°  N", LattX, LattY);
    text("Longitude :  127.5101°  E", LongX, LongY);
+}
+
+void LoadNorthKorea()
+{
+  tint(255, 127);
+  image(NorthKorea, width/4 - 30, height/2 - 220);
 }
