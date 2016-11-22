@@ -27,5 +27,4 @@ To switch to the next screen, you press the launch button. This initiates the la
 In Screen 4 you are greeted with the map of North Korea and a Target on the capital Pyongyang. The map was edited in Photoshop to match the background and then loaded into the program. I added a pulse circle over the capital to give a target feeling. I also added background lines that make it feel the target is locked in. I created a timer on this screen that counts down from 10 when you load into the fourth screen I did this by using Boolean variable to initiate the countdown when it loads on to the screen. I also created a loading wheel that displays at the bottom right hand corner of the screen. I used arcs to create it and offset each of them so they are a slight distance away from each other. I rotate them by changing the angle variables and move some clockwise and others anti clockwise.
 When the countdown reaches 0 the missile has landed and it displays the final screen. The final screen is just a simple red background that displays the message “Mission Successful” to indicate the program has ended.
 
-Youtube Video of Assignment
-[Assignment](https://youtu.be/z84tDOA0dVA)
+[Youtube Video of Assignment](https://youtu.be/z84tDOA0dVA)
