@@ -73,6 +73,9 @@ float TargetX = -100;
 float TargetY = -100;
 float LattX,LattY,LongX,LongY = -100;
 
+//RedCircle
+int CircleDiameter = 700;
+
 void draw()
 {
   if(State == InitialState)
