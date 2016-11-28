@@ -18,15 +18,21 @@ For the changing text I used if else statements to change the text from "Loading
 
 To switch the screen from the loading screen to the Target screen it waits for the percentage to reach 100% once it does it has a delay of 2 seconds before it switched to next screen to give it a loading sort of feeling to it.
 
+![Alt text](https://github.com/Superdizzy17/OOP-Assignment-1/blob/master/Screen2.png "Screen 2")
+
 -- Screen 3 --
 
 In my third screen is the target screen where you choose your target, currently it's only set up for North Korea. I used Photoshop to edit the image of Asia to match the background colour of the program and then loaded it in to the program and changed the tint to lower the opacity. I then edited the image again and coloured the target in this case North Korea in red and loaded that Image in to the program. The images switch once the mouse has been pressed to give the illusion that the country selected is highlighted in the program. I again used the red Render Line in this screen to give added effect. When the mouse is pressed target lines come over and focus in on North Korea. The program also displays the Longitude and Latitude of North Korea as well as an indicator that the target has been located. I then used the button class again and loaded in all my variables and created a button called Launch with the same principles as the first button I used.
 
 To switch to the next screen, you press the launch button. This initiates the launce sequence
 
+![Alt text](https://github.com/Superdizzy17/OOP-Assignment-1/blob/master/Screen3.png "Screen 3")
+
 -- Screen 4 --
 
 In Screen 4 you are greeted with the map of North Korea and a Target on the capital Pyongyang. The map was edited in Photoshop to match the background and then loaded into the program. I added a pulse circle over the capital to give a target feeling. I also added background lines that make it feel the target is locked in. I created a timer on this screen that counts down from 10 when you load into the fourth screen I did this by using Boolean variable to initiate the countdown when it loads on to the screen. I also created a loading wheel that displays at the bottom right hand corner of the screen. I used arcs to create it and offset each of them so they are a slight distance away from each other. I rotate them by changing the angle variables and move some clockwise and others anti clockwise.
 When the countdown reaches 0 the missile has landed and it displays the final screen. The final screen is just a simple red background that displays the message “Mission Successful” to indicate the program has ended.
+
+![Alt text](https://github.com/Superdizzy17/OOP-Assignment-1/blob/master/Screen4.png "Screen 4")
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/z84tDOA0dVA/0.jpg)](http://www.youtube.com/watch?v=z84tDOA0dVA "Processing Assignment - Year 2 - Missile Control ")
