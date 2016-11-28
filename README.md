@@ -3,6 +3,16 @@ This is a github repository for my Object Orientated Programming assignment 1 fo
 
 For my project I wanted to create a military missile launch control systems interface. I started my project by looking online for inspiration in terms of design aspects of my project. I found various images that inspired my interface but ultimately it was my own design because I wanted it to feel unique.
 
+Key Features
+- General asthetic look generated from all code
+- Button class that uses polymorphism
+- Real time clock
+- Pulse Circle that fades in and fades out
+- Loading screen with loading bar that moves 2 direction and correct percentage based on the loading bar
+- Loading text that changes depending on the loading bar progress
+- Countdown timer that loads only when your on the correct screen
+- Loading wheel using arcs
+
 -- Screen 1 --
 
 I started out with the main screen where my first task was setting up the various transparent lines you see on the screen. I then created a button that when hovered over it would highlight and when pressed would change the screen. I used a class to do this and it was useful as I used it again in my program. After finishing the button, I felt the screen was missing some detail so I added an image to the background which is loaded in from a file, I edited the image so it would blend in with the background. I created small circles in the background using a for loop that just add a bit of detail along with a red render line for added effect. I also included a full functioning digital clock that tells the correct time, I found that processing has built in hour(), minute() and seconds() functions and used it to my advantage.
