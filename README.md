@@ -13,6 +13,7 @@ Key Features
 - Countdown timer that loads only when your on the correct screen
 - Loading wheel using arcs
 
+
 -- Screen 1 --
 
 I started out with the main screen where my first task was setting up the various transparent lines you see on the screen. I then created a button that when hovered over it would highlight and when pressed would change the screen. I used a class to do this and it was useful as I used it again in my program. After finishing the button, I felt the screen was missing some detail so I added an image to the background which is loaded in from a file, I edited the image so it would blend in with the background. I created small circles in the background using a for loop that just add a bit of detail along with a red render line for added effect. I also included a full functioning digital clock that tells the correct time, I found that processing has built in hour(), minute() and seconds() functions and used it to my advantage.
