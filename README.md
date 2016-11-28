@@ -9,8 +9,6 @@ I started out with the main screen where my first task was setting up the variou
 
 To switch screens I used an integer variable called State that would switch the screens at different instances for the first instance I switch the screen when the button is pressed, I did so in the button class which I give the class the current screen and the next screen and it changes once the button is pressed. I also use this further on.
 
-![Alt text](https://gyazo.com/1c5243f26e5d98036769dce47a8fc56b "Screen 1")
-
 -- Screen 2 --
 
 In my second screen which is the loading screen, I have a loading bar, loading text which changes, pulse circle, percentage loading, background lines, and the same background circles I used in the first screen. With the Loading bar I wanted it to load in two different directions rather than the standard loading one way so made it start in the centre of the screen and change in two different directions.
